@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Web ducanh test</title>
+<title>Ôn thi vào lớp 10</title>
 
 <style>
 
@@ -27,17 +27,13 @@ font-size:50px;
 margin:10px;
 }
 
-.header p{
-opacity:0.8;
-}
-
 /* container */
 .container{
 padding:40px;
 text-align:center;
 }
 
-/* card */
+/* cards */
 .cards{
 display:flex;
 justify-content:center;
@@ -58,12 +54,7 @@ transition:0.3s;
 transform:translateY(-5px);
 }
 
-.card h3{
-margin-top:10px;
-}
-
 .btn{
-display:inline-block;
 margin-top:15px;
 padding:10px 20px;
 border:none;
@@ -73,14 +64,33 @@ border-radius:10px;
 cursor:pointer;
 }
 
+/* form section */
+#formSection{
+display:none;
+padding:40px;
+text-align:center;
+}
+
+.khung{
+width:900px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- Trang chọn đề -->
+<div id="home">
+
 <div class="header">
 <h1>Ôn thi Tuyển sinh vào 10 nhé</h1>
-<p>Ko được tra goolge nha — Chấm điểm tự động</p>
+<p>Không được tra Google nha — Chấm điểm tự động</p>
 </div>
 
 <div class="container">
@@ -90,33 +100,44 @@ cursor:pointer;
 <div class="cards">
 
 <div class="card">
-<h3>Test tiếng anh</h3>
+<h3>Test Toán</h3>
 <p>90 phút • 50 câu</p>
-<button class="btn">Bắt đầu</button>
-</div>
-
-<div class="card">
-<h3>Test ngữ văn</h3>
-<p>90 phút • 50 câu</p>
-<button class="btn">Bắt đầu</button>
-</div>
-
-<div class="card">
-<h3>Test toán</h3>
-<p>90 phút • 50 câu</p>
-<button class="btn">Bắt đầu</button>
-</div>
-
-<div class="card">
-<h3>Test hoá học</h3>
-<p>90 phút • 50 câu</p>
-<button class="btn">Bắt đầu</button>
+<button class="btn" onclick="startTest()">Bắt đầu</button>
 </div>
 
 </div>
 
 </div>
+
+</div>
+
+<!-- Trang làm bài -->
+<div id="formSection">
+
+<h1>Bài thi Toán</h1>
+
+<div class="khung">
+
+<iframe 
+src="https://forms.gle/b1h4vnPWMWxDyWNg7"
+width="100%" 
+height="900"
+frameborder="0">
+</iframe>
+
+</div>
+
+</div>
+
+<script>
+
+function startTest(){
+document.getElementById("home").style.display="none";
+document.getElementById("formSection").style.display="block";
+window.scrollTo(0,0);
+}
+
+</script>
 
 </body>
-
 </html>
